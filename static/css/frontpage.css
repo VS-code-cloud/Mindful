@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+
+
+body {
+  background: #FFFFFF
+}
+
+.buttonHome {
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  border-radius: 2vw;
+  width:80vw;
+  height:22vw;
+  font-size: 6vw;
+}
+
+.slateButton {
+  background-color: #3F0049;
+  border: 1px solid #3F0049;
+  color:white;
+}
+
+.whiteButton {
+  border: 1px solid #3B3B3B;
+  background-color:white;
+  color: #3B3B3B;
+}
+
+.mt7vw {
+  margin-top:12vw;
+}
+
+.centerPage {
+  transform: translate(-50%, -50%);
+  position:absolute;
+  top: 50vh;
+  left: 50vw;
+}
+
+.homeLogo {
+  width: 60vw;
+  height:auto;
+  margin-left:10vw;
+}

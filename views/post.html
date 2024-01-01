@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mindful</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+    *{
+  padding: 0;
+  margin: 0;
+      font-family: "Dosis", sans-serif;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+
+}
+
+.login_box{
+  background-color: transparent;
+  padding: 10vw;
+  width: 60vw;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  overflow-y: scroll;
+}
+    ::-webkit-scrollbar {
+  width: 10px;
+    border-radius: 200vh;
+      transform: translateX(-4vw);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:transparent; 
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+    border-radius: 200vh;
+
+      transform: translateX(-4vw);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+h1{
+  text-align:center;
+  margin-bottom: 20px;
+  font-size:80px;
+  color:#262626;
+}
+
+.input_box{
+  width: 90%;
+  margin: auto;
+  height: 80px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input_box input{
+  width: 100%;
+    height:80px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+    padding: 0px 20px;
+  background-color:transparent;
+  border-bottom: 1px solid #262626;
+  color: #262626;
+  font-size: 30px;
+}
+
+.input_box label{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform:translateY(-50%);
+  font-size:30px;
+  font-weight:500;
+  color: #262626;
+  transition: .3s;
+}
+
+.icon{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #262626;
+}
+
+.rem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#262626;
+  font-size: 14px;
+}
+
+.rem input{
+  margin-right: 5px;
+}
+
+.rem a{
+  text-decoration: none;
+  margin-left:5px;
+  color:#262626;
+  font-weight: bold;
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+}
+
+.login button{
+  width: 200px;
+  height:80px;
+  margin-top:20px;
+  border-radius: 20px;
+  font-size:30px;
+  font-weight:500;
+  background-color: #FF;
+  border: none;
+  outline:none;
+  transition: 1s ease;
+}
+
+.reg{
+  display: flex;
+  justify-content: center;
+  margin-top:20px;
+  font-size: 14px;
+  color: #262626f;
+}
+
+.reg a{
+  text-decoration: none;
+  margin-left: 5px;
+  color: #262626;
+  font-weight: bold;
+}
+
+
+.input_box input:focus ~ label,
+.input_box input:valid ~ label{
+  top: 0;
+ }
+
+
+ .login button:hover{
+  cursor: pointer;
+  background-color:transparent;
+  color:#FF;
+  border: 1px solid #F;
+ }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="login_box">
+    <h1>Post to Community</h1>
+    <div class="input_box">
+      <input type="text" id="title" required="">
+      <label for="">Title</label>
+      <ion-icon class="icon " name="albums-outline"></ion-icon>
+    </div>
+    <div class="input_box">
+      <input type="text" id="content" required="">
+      <label for="">Content</label>
+      <ion-icon class='icon' name="pencil-outline"></ion-icon>
+    </div>
+    <div class="login">
+      <button id="postBtn">Post</button>
+    </div>
+  </div>
+ </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+  </script>
+<script type="text/javascript">
+    async function handlePost() {
+      var title = document.getElementById('title').value;
+      var content = document.getElementById('content').value;
+      if (!content ||content.length==0) {
+        alert('Please enter content.');
+        return;
+      }
+      if (!title || title.length==0) {
+        alert('Please enter a title.');
+        return;
+      }
+      var user
+      try {
+        user = JSON.parse(localStorage.getItem('userData'))
+      } catch (error) {
+        console.log('error')
+        alert('There was an error authenticating you')
+        return;
+      }
+
+      if (!user||!user.uid||!user.groups) {
+
+                alert('Invalid, please sign in first.')
+        return
+      }
+const url = 'https://fakespotlessexperiment.randomcodingboy.repl.co/api/post';
+const data = {
+"title": `${title}`,
+  "content": `${content}`,
+  "authorUid": `${user.uid}`,
+  "group": `${localStorage.getItem("currCommunity")}`,
+  "authorName": `${user.name}`
+};
+      let toSend = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
+
+      let response = await fetch(url, {
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "accept-language": "en-US,en;q=0.9",
+          "cache-control": "max-age=0",
+          "content-type": "application/x-www-form-urlencoded",
+          "sec-ch-ua": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?1",
+          "sec-ch-ua-platform": "\"Android\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1"
+        },
+        "referrer": "https://fakespotlessexperiment.randomcodingboy.repl.co/signup",
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "body": toSend,
+        "method": "POST",
+        "mode": "cors",
+        "credentials": "omit"
+      });
+const text = await response.text();
+          window.location.href="/community"
+}
+      document.getElementById('postBtn').addEventListener('click', handlePost, false)
+  </script>
+</body>
+</html>

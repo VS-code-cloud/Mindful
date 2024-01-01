@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+#mainDashBody {
+  width:80vw;
+  max-width:80vw;
+  min-width:80vw;
+  margin-left:10vw;
+}
+
+.taskItem {
+  padding: 10vw;
+  background-color: white;
+  border: 1px solid #456B87;
+  width: 80vw;
+  border-radius: 2vw;
+  margin-top: 3vw;
+  color:black;
+}
+
+.taskItem h5 {
+  font-weight: 600;
+  font-size: 6vw;
+  width: 100%;
+  text-align: center;
+  font-family: Verdana;
+  line-height: 150%;
+  margin-top: 10px;
+  font-family:"Jua", sans-serif;
+}
+
+.yourImpact {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  margin-top: 2vw;
+  text-align: center;
+  font-size: 4vw;
+  letter-spacing: 0.4vw;
+  line-height: 8vw;
+}
+
+.rankText {
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+  font-size: 4vw;
+  margin-top: 0;
+  letter-spacing: 0.3vw;
+  color: rgb(66, 66, 66);
+}
+
+.yourRank {
+  font-family: "Jua", sans-serif;
+  text-align:center;
+  font-size: 8vw;
+  letter-spacing: 2.2vw;
+}
+
+.rankBox {
+  padding: 10vw;
+  width: 80vw;
+  max-width: 80vw;
+  margin-top: 3vw;
+  border-radius: 2vw;
+}
+
+.taskImage {
+  width: 18.5vw;
+  margin-top: 5px;
+}
+
+.tasksWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.taskBtn {
+  width: 60vw;
+  text-align: center;
+  background-color: #456B87;
+  color:white;
+  border-radius: 2vw;
+  padding: 4vw;
+  font-family: Tahoma;
+  font-size: 13px;
+  border:none;
+  font-size: 3.5vw;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  transition: ease 1s;
+}
+
+.taskBtn:hover {
+  background-color: white;
+  color: #456B87;
+  border: 1px solid #456B87;
+}
+
+h1 {
+  font-size: 10vw !important;
+  margin-left: 2vw;
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  line-height:14vw;
+  margin-bottom:4vw;
+}
+
+spacer20vh {
+  padding:20vh;
+}
+
+.carbonImpact {
+  font-family: "Oxygen", sans-serif;
+  font-weight:300;
+  margin-top: 2vw;
+  text-align: center;
+  font-size:4vw;
+  letter-spacing: 0.4vw;
+  line-height: 8vw;
+}
+
+.impactBox {
+  max-width: 80vw;
+  width: 80vw;
+  padding:10vw;
+  background-color: rgb(240, 240, 240);
+  border-radius: 2vw;
+}
+
+.rankImg {
+  position: relative;
+  padding: 2vw;
+  width: 6vw;
+}
+
+body {
+  padding-bottom: 15vh;
+}
+
+.goToButton {
+  border-radius: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  font-size: 13px;
+  color: #fff;
+  background: #456B87;
+  padding: 12px 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: ease 1s;
+  border: 1px solid #456B87;
+  height: 22vw;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 4vw;
+  letter-spacing: 0.7vw;
+  margin-top: 3vw;
+}
+
+.goToButton:hover {
+  background-color:white;
+  border: 1px solid #456B87;
+  color: #456B87;
+}
+
+.searchBar {
+  width: 80vw;
+  padding: 5vw;
+  border: 1px solid #456B87;
+  border-radius: 2vw;
+  font-size: 4.5vw;
+  font-family: "Oxygen", sans-serif;
+  letter-spacing: 0.7vw;
+}
+
+.leaderTop {
+  border-radius: 2vw 2vw 0 0;
+  padding-top: 10vw !important;
+}
+
+.leaderBottom {
+  border-radius: 0 0 2vw 2vw;
+  padding-bottom: 10vw !important;
+}
+
+.leader {
+  font-size: 4vw;
+  padding-top: 2.5vw;
+  margin:0;
+  border:none;
+  padding-bottom:2.5vw;
+  width: 80vw;
+  font-family: "Oxygen", sans-serif;
+  letter-spacing:0.5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.leaderBox {
+  margin-top: 3vw;
+  background: rgb(240, 240, 240);
+  border-radius: 2vw;
+}
+
+.lbText {
+  margin-top: 7vw;
+}
+
+.post {
+  width: 80vw;
+  background: white;
+  border: 1px black;
+  padding: 5vw;
+  border-radius: 3vw;
+  margin-left: 10vw;
+  margin-bottom: 4vh;
+  box-shadow: 0px 8px 15px 5px rgba(0,0,0,.3);
+}
+h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 3rem;
+}
+
+.gSelectForm {
+  display: flex;
+  font-size: 2rem;
+  width: fit-content;
+}
+
+#groupsSelect {
+  padding: 2vw;
+  border-radius: 1vw 0 0 1vw
+}
+
+input {
+  padding: 2vw;
+  border-radius: 0vw 1vw 1vw 0vw
+}
+
+.fc {
+  width: fit-content;
+  margin:0;
+  font-size: 2rem;
+  padding:2vw;
+  margin-right: 4vw;
+  border-radius: 1vw;
+}
+
+.flex {
+  display:flex;
+  align-items:center;
+  margin-bottom: 4vh;
+  justify-content: center;
+}
